@@ -1,0 +1,27 @@
+header{
+    background: #bb1e1e;
+    
+}
+header h1{
+    font-size: 50px;
+    text-align: center;
+
+}
+main{
+    height: 100%;
+    background: url(fundo.png);
+    filter: blur(3px);
+}
+
+.imagem{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5%;
+}
+footer{
+    background: #bb1e1e; 
+}
+footer p{
+    text-align: center;
+}
