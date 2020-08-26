@@ -1,27 +1,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>PokeSearch</title>
 </head>
 <body>
     <header>
-        <div class="caixa">
-            <h1>PokeSearch</h1>
-        </div>
+        <nav class="container-fluid-nav text-center navbar-dark bg-dark">
+                <h1>PokeSearch</h1>
+        </nav>
     </header>
     
     <main>
-        <div class="bg-imagem"></div>
-            <form class="pesquisa">
-                <input type="text" id="buscar" placeholder="Buscar Pokemon"/>
-                <button id="btnBusca" class="button">Buscar</button>
-            </form>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Procurar Pokemon" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseExample" id="search">Buscar</button>
+                        </div>
+                      </div>
+                </div>
+              </div>
+        </div>
     </main>
+
+    <div class="collapse" id="collapseExample">
+        <div class="card mx-auto border-dark" style="width: 18rem;">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" class="card-img-top" alt="...">
+            <div class="container">
+                <div class="row">
+                  <div class="col-6">Pikachu</div>
+                  <div class="col-6 ">Tipo: eletrico</div>
+              
+                  
+                  <div class="w-100 d-none d-md-block"></div>
+              
+                  <div class="col-6 ">Peso: 70</div>
+                  <div class="col-6 ">Tamanho: 10</div>
+
+                  <div class="w-100 d-none d-md-block"></div>
+              
+                  <div class="col-6 ">Hp: 70</div>
+                  <div class="col-6 ">Defesa: 10</div>
+
+                  <div class="w-100 d-none d-md-block"></div>
+              
+                  <div class="col-6 ">Ataque: 70</div>
+                  <div class="col-6 ">Velocidade: 70</div>
+            
+                </div>
+              </div>
+
+          </div>
+    </div>
     
-    <footer>
-        <p>AppMoove</p>
-    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="test.js"></script>
 </body>
 </html>
