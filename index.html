@@ -10,13 +10,13 @@
 
 <body>
     <header>
-        <nav class="container-fluid-nav text-center navbar-dark bg-dark">
+        <nav class="container-fluid-nav text-center navbar-dark color-navbar">
             <h1>PokeSearch</h1>
         </nav>
     </header>
 
     <main>
-        <div class="container">
+        <div class="container container-main">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
                     <div class="input-group mb-3">
@@ -29,63 +29,80 @@
                 </div>
             </div>
         </div>
-    </main>
-
-    <div class="collapse" id="card-collapse">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm">
-                    <div class="card mx-auto border-dark card-box">
-                        <img class="card-img-top" id="pokemon-front">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-6" id="pokemon-nome"></div>
-                                <div class="col-6 " id="pokemon-velocidade"></div>
 
 
-
-                                <div class="w-100 d-none d-md-block"></div>
-
-                                <div class="col-6 " id="pokemon-peso"></div>
-                                <div class="col-6 " id="pokemon-tamanho"></div>
-
-                                <div class="w-100 d-none d-md-block"></div>
-
-                                <div class="col-6 " id="pokemon-hp"></div>
-                                <div class="col-6 " id="pokemon-defesa"></div>
-
-                                <div class="w-100 d-none d-md-block"></div>
-
-                                <div class="col-6 " id="pokemon-ataque"></div>
+        <div class="collapse" id="card-collapse">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card mx-auto border-dark card-box">
+                            <img class="card-img-top" id="pokemon-front">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6" id="pokemon-nome"></div>
+                                    <div class="col-6 " id="pokemon-velocidade"></div>
 
 
+
+                                    <div class="w-100 d-none d-md-block"></div>
+
+                                    <div class="col-6 " id="pokemon-peso"></div>
+                                    <div class="col-6 " id="pokemon-tamanho"></div>
+
+                                    <div class="w-100 d-none d-md-block"></div>
+
+                                    <div class="col-6 " id="pokemon-hp"></div>
+                                    <div class="col-6 " id="pokemon-defesa"></div>
+
+                                    <div class="w-100 d-none d-md-block"></div>
+
+                                    <div class="col-6 " id="pokemon-ataque"></div>
+
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card mx-auto border-dark card-box">
-                        <div class="card-body">
-                            <h5 class="card-title">Tipo do pokemon</h5>
-                            <ul id="lista-tipo"></ul>
+                    <div class="col-sm">
+                        <div class="card mx-auto border-dark card-box">
+                            <div class="card-body">
+                                <h5 class="card-title">Tipo do pokemon</h5>
+                                <ul id="lista-tipo"></ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card mx-auto border-dark card-box">
-                        <div class="card-body">
-                            <h5 class="card-title">Habilidades do pokemon</h5>
-                            <ul id="lista-habilidades"></ul>
+                    <div class="col-sm">
+                        <div class="card mx-auto border-dark card-box">
+                            <div class="card-body">
+                                <h5 class="card-title">Habilidades do pokemon</h5>
+                                <ul id="lista-habilidades"></ul>
+                            </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
+
+
+
         </div>
+    </main>
 
+    <footer>
+        <nav class="container-fluid-nav text-center navbar-dark color-navbar">
+            
+            <div class="fadein">
+                
+                <img id="f3"
+                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/270.png">
+                <img id="f1"
+                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/271.png">
+                    <img id="f2"
+                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/272.png">
+                </div>
+        </nav>
+    </footer>
 
-
-    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="ModalPokemonTipo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -95,7 +112,7 @@
                     <h3 class="modal-title" id="ModalLabel"></h3>
                 </div>
                 <div class="modal-body" id="ModalBody">
-                    <ul id="lista-caracteristica-pokemon"></ul>
+                    <ul id="lista-caracteristica-pokemon" class="list-group" ></ul>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
@@ -103,6 +120,7 @@
             </div>
         </div>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
