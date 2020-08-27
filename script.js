@@ -12,7 +12,7 @@ $('#search').on("click",function(){
             $("#lista-tipo").append(`<li><a onclick="return searchTipo('${data.types[tipo].type.url}');">${data.types[tipo].type.name}</a></li>`)
         }
         for(habilidade in data.abilities){
-            $("#lista-habilidades").append('<li><a>'+data.abilities[habilidade].ability.name+'</a></li>')
+            $("#lista-habilidades").append(`<li><a onclick="return showShortEffect('${data.abilities[habilidade].ability.url}')">${data.abilities[habilidade].ability.name}</a></li>`)
         }
         document.getElementById("pokemon-front").src = data.sprites.front_default
         document.getElementById("pokemon-nome").innerHTML = data.name.toUpperCase();
@@ -34,7 +34,6 @@ $('#search').on("click",function(){
 });
 
 function searchTipo(tipo) {
-   
     let url =  tipo
     fetch(url)
     .then((response) => {
@@ -42,9 +41,9 @@ function searchTipo(tipo) {
         
     })
     .then((data) =>{
-        console.clear();
+        $("#ModalLabel").append('Lista de pokemons do mesmo tipo')
         for (poke in data.pokemon){
-            $("#lista-tipo-pokemon").append('<li><a>'+data.pokemon[poke].pokemon.name+'</a></li>');
+            $("#lista-caracteristica-pokemon").append('<li><a>'+data.pokemon[poke].pokemon.name+'</a></li>');
         }
         
     })
@@ -57,3 +56,42 @@ function searchTipo(tipo) {
 
     
 }
+
+function showShortEffect(effect) {
+  
+    
+    let url =  effect
+    
+    fetch(url)
+    .then((response) => {
+        return response.json();
+        
+    })
+    .then((data) =>{
+        $("#ModalLabel").append('Efeito da habilidade')
+        for (efeito in data.effect_entries){
+            
+            if (data.effect_entries[efeito].language.name == 'en') {
+                $("#lista-caracteristica-pokemon").append('<li><a>'+data.effect_entries[efeito].short_effect+'</a></li>');  
+            } 
+            
+        }
+        
+    })
+    .catch((erro) => {
+        alert("Erro ao buscar Pokemon.");
+        console.log(erro);
+        
+    });
+    $('#ModalPokemonTipo').modal('show');
+    
+
+    
+}
+
+$(document).ready(function() {
+    $(".modal").on("hidden.bs.modal", function() {
+        $("#ModalLabel").html("");
+        $("#lista-caracteristica-pokemon").html("");
+    });
+  });
