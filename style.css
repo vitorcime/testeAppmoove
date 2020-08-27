@@ -1,7 +1,27 @@
-
+@font-face {
+  font-family: Russo One;
+  src: url('RussoOne-Regular.ttf');
+}
+nav h1{
+  margin-bottom: 0;
+}
+main{
+    min-height: 89%;
+    overflow: hidden;
+    background-color: #e6faff;
+}
 header h1{
+    font-family: 'Russo One';
     color: blanchedalmond;
 
+}
+.color-navbar{
+  background-color: #800000;
+}
+
+.container-main{
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .card-box{
@@ -12,3 +32,87 @@ ul {
     list-style-type: none;
 }
 
+.opcoes:hover{
+    color: red;
+    cursor: pointer;
+}
+
+
+/*css para animação da evolução do pokemon encontrado no footer*/
+.fadein { 
+    top: 0px;
+    left: 50%;
+    margin: auto;
+  }
+  
+  .fadein img{
+    top: 0;
+    -webkit-animation-name: fade;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 6s;
+    animation-name: fade;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+  }
+  
+  @-webkit-keyframes fade {
+    0% {
+      opacity: 0;
+    }
+  
+    20% {
+      opacity: 1;
+    }
+  
+    33% {
+      opacity: 1;
+    }
+  
+    53% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+  
+    20% {
+      opacity: 1;
+    }
+  
+    33% {
+      opacity: 1;
+    }
+  
+    53% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  #f1{
+    width: 60px;
+  }
+
+  #f2 {
+    width: 60px;
+    -webkit-animation-delay: -4s;
+    
+  }
+  
+  #f3 {
+    width: 60px;
+    -webkit-animation-delay: -2s;
+    
+  }
+  
+  
