@@ -5,5 +5,10 @@ header h1{
 }
 
 .card-box{
-    max-width: 18rem;
+    max-width: 19rem;
 }
+
+ul {
+    list-style-type: none;
+}
+
