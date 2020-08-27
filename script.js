@@ -1,4 +1,4 @@
-function searchpk(){
+$('#search').on("click",function(){
     let url =  'http://pokeapi.co/api/v2/pokemon/'+ (document.getElementById('input-nome').value).toLowerCase();
     fetch(url)
     .then((response) => {
@@ -6,15 +6,16 @@ function searchpk(){
         
     })
     .then((data) =>{
-        console.clear();
-        for (variavel in data.types){
-            console.log(data.types[variavel].type.name);
+        $("#lista-tipo").empty();
+        $("#lista-habilidades").empty();
+        for(tipo in data.types){
+            $("#lista-tipo").append(`<li><a onclick="return searchTipo('${data.types[tipo].type.url}');">${data.types[tipo].type.name}</a></li>`)
         }
-        
-        
+        for(habilidade in data.abilities){
+            $("#lista-habilidades").append('<li><a>'+data.abilities[habilidade].ability.name+'</a></li>')
+        }
         document.getElementById("pokemon-front").src = data.sprites.front_default
         document.getElementById("pokemon-nome").innerHTML = data.name.toUpperCase();
-        document.getElementById("pokemon-tipo").innerHTML = 'Tipo: ' + data.types[0].type.name;
         document.getElementById("pokemon-peso").innerHTML = 'Peso: ' + data.weight;
         document.getElementById("pokemon-tamanho").innerHTML = 'Tamanho: ' + data.height;
         document.getElementById("pokemon-hp").innerHTML = 'HP: ' + data.stats[0].base_stat;
@@ -30,6 +31,29 @@ function searchpk(){
         $('#card-collapse').collapse('dispose');
         console.log(erro);
     });
-}
+});
 
-document.getElementById("search").onclick = searchpk;
+function searchTipo(tipo) {
+   
+    let url =  tipo
+    fetch(url)
+    .then((response) => {
+        return response.json();
+        
+    })
+    .then((data) =>{
+        console.clear();
+        for (poke in data.pokemon){
+            $("#lista-tipo-pokemon").append('<li><a>'+data.pokemon[poke].pokemon.name+'</a></li>');
+        }
+        
+    })
+    .catch((erro) => {
+        alert("Erro ao buscar Pokemon.");
+        console.log(erro);
+        
+    });
+    $('#ModalPokemonTipo').modal('show');
+
+    
+}
