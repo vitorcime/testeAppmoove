@@ -1,5 +1,5 @@
 $('#search').on("click",function(){
-    let url =  'http://pokeapi.co/api/v2/pokemon/'+ (document.getElementById('input-nome').value).toLowerCase();
+    let url =  'https://pokeapi.co/api/v2/pokemon/'+ (document.getElementById('input-nome').value).toLowerCase();
     fetch(url)
     .then((response) => {
         return response.json();
