@@ -8,7 +8,8 @@ nav h1{
 main{
     min-height: 89%;
     overflow: hidden;
-    background-color: #e6faff;
+    background-image: url("background.png");
+    background-size: 100% 100%;
 }
 header h1{
     font-family: 'Russo One';
@@ -19,6 +20,16 @@ header h1{
   background-color: #800000;
 }
 
+.input-principal{
+  border-radius: 10px;
+}
+
+.botao-buscar{
+  color: blanchedalmond;
+  background-color: #800000;
+  border-radius: 5px;
+}
+
 .container-main{
   margin-top: 2%;
   margin-bottom: 2%;
@@ -26,6 +37,7 @@ header h1{
 
 .card-box{
     max-width: 19rem;
+    background: rgba(255, 255, 255, 0.6)
 }
 
 ul {
